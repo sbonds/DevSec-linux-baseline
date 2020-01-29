@@ -98,12 +98,12 @@ control 'package-08' do
     its('log_file') { should cmp '/var/log/audit/audit.log' }
     its('log_format') { should cmp 'raw' }
     its('flush') { should match(/^INCREMENTAL|INCREMENTAL_ASYNC$/) }
-    its('max_log_file_action') { should cmp 'keep_logs' }
+    its('max_log_file_action') { should cmp 'ROTATE' }
     its('space_left') { should cmp 75 }
     its('action_mail_acct') { should cmp 'root' }
-    its('space_left_action') { should cmp 'SYSLOG' }
+    its('space_left_action') { should cmp 'IGNORE' }
     its('admin_space_left') { should cmp 50 }
-    its('admin_space_left_action') { should cmp 'SUSPEND' }
+    its('admin_space_left_action') { should cmp 'IGNORE' }
     its('disk_full_action') { should cmp 'SUSPEND' }
     its('disk_error_action') { should cmp 'SUSPEND' }
   end
