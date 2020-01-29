@@ -150,16 +150,6 @@ control 'os-05b' do
   only_if { os.redhat? }
 end
 
-control 'os-06' do
-  impact 1.0
-  title 'Check for SUID/ SGID blacklist'
-  desc 'Find blacklisted SUID and SGID files to ensure that no rogue SUID and SGID files have been introduced into the system'
-
-  describe suid_check(blacklist) do
-    its('diff') { should be_empty }
-  end
-end
-
 control 'os-07' do
   impact 1.0
   title 'Unique uid and gid'
