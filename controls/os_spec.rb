@@ -33,7 +33,7 @@ container_execution = begin
 
 blacklist = attribute(
   'blacklist',
-  default: suid_blacklist.default,
+  value: suid_blacklist.default,
   description: 'blacklist of suid/sgid program on system'
 )
 
