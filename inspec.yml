@@ -5,6 +5,6 @@ copyright: Steve Bonds
 copyright_email: sbonds@gmail.com
 license: Apache-2.0
 summary: Test suite for best practice Linux OS hardening
-version: 2.2.2sbonds
+version: 2.3.0sbonds
 supports:
   - os-family: linux

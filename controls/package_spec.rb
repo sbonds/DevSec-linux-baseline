@@ -54,6 +54,8 @@ control 'package-03' do
   end
 end
 
+# package-04 is reserved, because we forgot to use it in the first-place :-)
+
 control 'package-05' do
   impact 1.0
   title 'Do not install ypserv server (NIS)'
@@ -97,7 +99,7 @@ control 'package-08' do
   describe auditd_conf do
     its('log_file') { should cmp '/var/log/audit/audit.log' }
     its('log_format') { should cmp 'raw' }
-    its('flush') { should match(/^INCREMENTAL|INCREMENTAL_ASYNC$/) }
+    its('flush') { should match(/^incremental|INCREMENTAL|incremental_async|INCREMENTAL_ASYNC$/) }
     its('max_log_file_action') { should cmp 'ROTATE' }
     its('space_left') { should cmp 75 }
     its('action_mail_acct') { should cmp 'root' }

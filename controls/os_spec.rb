@@ -24,7 +24,7 @@ login_defs_passmindays = attribute('login_defs_passmindays', value: '7', descrip
 login_defs_passwarnage = attribute('login_defs_passwarnage', value: '7', description: 'Default password warnage (days) to set in login.defs')
 
 shadow_group = 'root'
-shadow_group = 'shadow' if os.debian? || os.suse?
+shadow_group = 'shadow' if os.debian? || os.suse? || os.name == 'alpine'
 container_execution = begin
                         virtualization.role == 'guest' && virtualization.system =~ /^(lxc|docker)$/
                       rescue NoMethodError

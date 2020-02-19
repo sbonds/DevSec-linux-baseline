@@ -233,7 +233,7 @@ control 'sysctl-19' do
   impact 1.0
   title 'IPv6 Forwarding'
   desc "If you're not intending for your system to forward traffic between interfaces, or if you only have a single interface, the forwarding function must be disable."
-  only_if { !container_execution }
+  only_if { sysctl_forwarding == false && !container_execution }
   describe kernel_parameter('net.ipv6.conf.all.forwarding') do
     its(:value) { should eq 0 }
   end
@@ -371,7 +371,7 @@ control 'sysctl-31b' do
   desc 'Ensure that core dumps are done with fully qualified path'
   only_if { kernel_parameter('fs.suid_dumpable').value == 2 && !container_execution }
   describe kernel_parameter('kernel.core_pattern') do
-    its(:value) { should match %r{^/.*} }
+    its(:value) { should match %r{^\|?/.*} }
   end
 end
 
