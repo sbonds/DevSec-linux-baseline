@@ -1,6 +1,134 @@
-# Change Log
+# Changelog
 
-## [2.3.0](https://github.com/dev-sec/linux-baseline/tree/2.3.0) (2019-05-14)
+## [2.6.2](https://github.com/dev-sec/linux-baseline/tree/2.6.2) (2021-01-26)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.6.1...2.6.2)
+
+**Merged pull requests:**
+
+- add github action for testing [\#144](https://github.com/dev-sec/linux-baseline/pull/144) ([rndmh3ro](https://github.com/rndmh3ro))
+- Fix tiny typo [\#143](https://github.com/dev-sec/linux-baseline/pull/143) ([danwit](https://github.com/danwit))
+
+## [2.6.1](https://github.com/dev-sec/linux-baseline/tree/2.6.1) (2020-12-28)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.6.0...2.6.1)
+
+**Merged pull requests:**
+
+- Allow arp\_ignore = 2 [\#142](https://github.com/dev-sec/linux-baseline/pull/142) ([mcgege](https://github.com/mcgege))
+
+## [2.6.0](https://github.com/dev-sec/linux-baseline/tree/2.6.0) (2020-12-16)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.5.0...2.6.0)
+
+**Implemented enhancements:**
+
+- feat\(osbaseline\): support validation for cpu vulnerabilities [\#138](https://github.com/dev-sec/linux-baseline/pull/138) ([imjoseangel](https://github.com/imjoseangel))
+
+**Closed issues:**
+
+- cpu-vulnerability-directory \(1 failed\) - Ubuntu [\#139](https://github.com/dev-sec/linux-baseline/issues/139)
+- Support for validation of cpu vulnerabilities [\#114](https://github.com/dev-sec/linux-baseline/issues/114)
+
+**Merged pull requests:**
+
+- only check cpu vulnerabilities if not in container [\#141](https://github.com/dev-sec/linux-baseline/pull/141) ([schurzi](https://github.com/schurzi))
+
+## [2.5.0](https://github.com/dev-sec/linux-baseline/tree/2.5.0) (2020-08-25)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.6...2.5.0)
+
+**Implemented enhancements:**
+
+- add archlinux-support for audit-check [\#136](https://github.com/dev-sec/linux-baseline/pull/136) ([rndmh3ro](https://github.com/rndmh3ro))
+
+**Closed issues:**
+
+- os-10: CIS: Disable unused filesystems \(1 failed\) [\#135](https://github.com/dev-sec/linux-baseline/issues/135)
+
+## [2.4.6](https://github.com/dev-sec/linux-baseline/tree/2.4.6) (2020-07-23)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.5...2.4.6)
+
+**Closed issues:**
+
+- Default umask 077/027 leads into several problems installing software packages [\#133](https://github.com/dev-sec/linux-baseline/issues/133)
+
+**Merged pull requests:**
+
+- The release draft references the correct SHA [\#134](https://github.com/dev-sec/linux-baseline/pull/134) ([micheelengronne](https://github.com/micheelengronne))
+
+## [2.4.5](https://github.com/dev-sec/linux-baseline/tree/2.4.5) (2020-06-30)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.4...2.4.5)
+
+**Closed issues:**
+
+- /etc/passwd should not contain any password hashes [\#117](https://github.com/dev-sec/linux-baseline/issues/117)
+
+**Merged pull requests:**
+
+- Adds /etc/passwd format check [\#132](https://github.com/dev-sec/linux-baseline/pull/132) ([imjoseangel](https://github.com/imjoseangel))
+
+## [2.4.4](https://github.com/dev-sec/linux-baseline/tree/2.4.4) (2020-05-19)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.3...2.4.4)
+
+**Merged pull requests:**
+
+- CHANGELOG for RELEASE done before the push to avoid breaking [\#131](https://github.com/dev-sec/linux-baseline/pull/131) ([micheelengronne](https://github.com/micheelengronne))
+
+## [2.4.3](https://github.com/dev-sec/linux-baseline/tree/2.4.3) (2020-05-19)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.2...2.4.3)
+
+**Merged pull requests:**
+
+- release trigger [\#130](https://github.com/dev-sec/linux-baseline/pull/130) ([micheelengronne](https://github.com/micheelengronne))
+
+## [2.4.2](https://github.com/dev-sec/linux-baseline/tree/2.4.2) (2020-05-19)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.1...2.4.2)
+
+**Merged pull requests:**
+
+- align versions [\#129](https://github.com/dev-sec/linux-baseline/pull/129) ([micheelengronne](https://github.com/micheelengronne))
+
+## [2.4.1](https://github.com/dev-sec/linux-baseline/tree/2.4.1) (2020-05-19)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.4.0...2.4.1)
+
+**Closed issues:**
+
+- New release [\#127](https://github.com/dev-sec/linux-baseline/issues/127)
+
+**Merged pull requests:**
+
+- github actions [\#128](https://github.com/dev-sec/linux-baseline/pull/128) ([micheelengronne](https://github.com/micheelengronne))
+
+## [2.4.0](https://github.com/dev-sec/linux-baseline/tree/2.4.0) (2020-03-26)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.3.0...2.4.0)
+
+**Closed issues:**
+
+- net.ipv4.ip\_forward needs to be '1' on docker hosts [\#126](https://github.com/dev-sec/linux-baseline/issues/126)
+- sysctl-19 should check the sysctl\_forwarding attribute [\#124](https://github.com/dev-sec/linux-baseline/issues/124)
+- Issue after upgrading to the latest version of Inspec. [\#122](https://github.com/dev-sec/linux-baseline/issues/122)
+- Support for ESXi [\#116](https://github.com/dev-sec/linux-baseline/issues/116)
+- Deprecation Warnings [\#115](https://github.com/dev-sec/linux-baseline/issues/115)
+- systctl-33 - undefined method `expect' [\#107](https://github.com/dev-sec/linux-baseline/issues/107)
+
+**Merged pull requests:**
+
+- skip the sysctl-19 control when sysctl\_forwarding is true [\#125](https://github.com/dev-sec/linux-baseline/pull/125) ([b-dean](https://github.com/b-dean))
+- add documentation for missing package-04 control [\#123](https://github.com/dev-sec/linux-baseline/pull/123) ([chris-rock](https://github.com/chris-rock))
+- Allow core dumps to be piped into a program with an absolute path. [\#121](https://github.com/dev-sec/linux-baseline/pull/121) ([samjmarshall](https://github.com/samjmarshall))
+- Allow for lowercase auditd config flush value. [\#120](https://github.com/dev-sec/linux-baseline/pull/120) ([samjmarshall](https://github.com/samjmarshall))
+- Fixing some deprecation notices [\#119](https://github.com/dev-sec/linux-baseline/pull/119) ([jjasghar](https://github.com/jjasghar))
+
+## [2.3.0](https://github.com/dev-sec/linux-baseline/tree/2.3.0) (2019-05-15)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.2.2...2.3.0)
 
 **Closed issues:**
@@ -14,6 +142,7 @@
 
 **Merged pull requests:**
 
+- Bump version to 2.3.0 and switch to inspec 3 for check [\#113](https://github.com/dev-sec/linux-baseline/pull/113) ([alexpop](https://github.com/alexpop))
 - Add compatibility for alpine based images [\#111](https://github.com/dev-sec/linux-baseline/pull/111) ([zopanix](https://github.com/zopanix))
 - Minor grammatical fix in README [\#108](https://github.com/dev-sec/linux-baseline/pull/108) ([cachedout](https://github.com/cachedout))
 - Update issue templates [\#106](https://github.com/dev-sec/linux-baseline/pull/106) ([rndmh3ro](https://github.com/rndmh3ro))
@@ -23,6 +152,7 @@
 - Update to test for rsh-server instead of duplicate telnetd [\#98](https://github.com/dev-sec/linux-baseline/pull/98) ([aavetis](https://github.com/aavetis))
 
 ## [2.2.2](https://github.com/dev-sec/linux-baseline/tree/2.2.2) (2018-07-19)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.2.1...2.2.2)
 
 **Merged pull requests:**
@@ -32,6 +162,7 @@
 - fix virtualization usage in older inspec versions [\#95](https://github.com/dev-sec/linux-baseline/pull/95) ([mattlqx](https://github.com/mattlqx))
 
 ## [2.2.1](https://github.com/dev-sec/linux-baseline/tree/2.2.1) (2018-05-14)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.2.0...2.2.1)
 
 **Closed issues:**
@@ -45,6 +176,7 @@
 - Fix typos in `inspec.yml` [\#88](https://github.com/dev-sec/linux-baseline/pull/88) ([jerryaldrichiii](https://github.com/jerryaldrichiii))
 
 ## [2.2.0](https://github.com/dev-sec/linux-baseline/tree/2.2.0) (2017-12-01)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.1.1...2.2.0)
 
 **Closed issues:**
@@ -72,6 +204,7 @@
 - use recommended spdx license identifier [\#68](https://github.com/dev-sec/linux-baseline/pull/68) ([chris-rock](https://github.com/chris-rock))
 
 ## [2.1.1](https://github.com/dev-sec/linux-baseline/tree/2.1.1) (2017-06-02)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.1.0...2.1.1)
 
 **Closed issues:**
@@ -88,6 +221,7 @@
 - Fix: more generic auditd settings [\#61](https://github.com/dev-sec/linux-baseline/pull/61) ([artem-sidorenko](https://github.com/artem-sidorenko))
 
 ## [2.1.0](https://github.com/dev-sec/linux-baseline/tree/2.1.0) (2017-05-08)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.0.1...2.1.0)
 
 **Merged pull requests:**
@@ -103,6 +237,7 @@
 - essay: differentiate redhat/debian, add extra conditions [\#44](https://github.com/dev-sec/linux-baseline/pull/44) ([juju4](https://github.com/juju4))
 
 ## [2.0.1](https://github.com/dev-sec/linux-baseline/tree/2.0.1) (2016-12-21)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/2.0.0...2.0.1)
 
 **Closed issues:**
@@ -118,6 +253,7 @@
 - Fix cpu flags and change default for net.ipv4.conf.all.log\_martians [\#39](https://github.com/dev-sec/linux-baseline/pull/39) ([chris-rock](https://github.com/chris-rock))
 
 ## [2.0.0](https://github.com/dev-sec/linux-baseline/tree/2.0.0) (2016-04-29)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/1.3.0...2.0.0)
 
 **Merged pull requests:**
@@ -125,6 +261,7 @@
 - inspec profile [\#38](https://github.com/dev-sec/linux-baseline/pull/38) ([chris-rock](https://github.com/chris-rock))
 
 ## [1.3.0](https://github.com/dev-sec/linux-baseline/tree/1.3.0) (2016-04-25)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/1.2.0...1.3.0)
 
 **Fixed bugs:**
@@ -136,6 +273,7 @@
 - prevent nil in flags [\#36](https://github.com/dev-sec/linux-baseline/pull/36) ([arlimus](https://github.com/arlimus))
 
 ## [1.2.0](https://github.com/dev-sec/linux-baseline/tree/1.2.0) (2015-12-08)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/1.1.0...1.2.0)
 
 **Merged pull requests:**
@@ -143,25 +281,17 @@
 - removed serverspec support and created all inspec tests [\#35](https://github.com/dev-sec/linux-baseline/pull/35) ([atomic111](https://github.com/atomic111))
 
 ## [1.1.0](https://github.com/dev-sec/linux-baseline/tree/1.1.0) (2015-10-15)
+
 [Full Changelog](https://github.com/dev-sec/linux-baseline/compare/1.0.0...1.1.0)
 
 **Merged pull requests:**
 
-- Remove whitespace [\#34](https://github.com/dev-sec/linux-baseline/pull/34) ([rndmh3ro](https://github.com/rndmh3ro))
-- Improve Ansible tests [\#33](https://github.com/dev-sec/linux-baseline/pull/33) ([rndmh3ro](https://github.com/rndmh3ro))
-- Fix typos [\#31](https://github.com/dev-sec/linux-baseline/pull/31) ([rndmh3ro](https://github.com/rndmh3ro))
-- update urls [\#30](https://github.com/dev-sec/linux-baseline/pull/30) ([chris-rock](https://github.com/chris-rock))
-- bugfix: add missing: ipv6 accept\_ra = 0 [\#29](https://github.com/dev-sec/linux-baseline/pull/29) ([arlimus](https://github.com/arlimus))
-- Ansible support [\#28](https://github.com/dev-sec/linux-baseline/pull/28) ([rndmh3ro](https://github.com/rndmh3ro))
-- add json format option [\#26](https://github.com/dev-sec/linux-baseline/pull/26) ([atomic111](https://github.com/atomic111))
-- Update common [\#25](https://github.com/dev-sec/linux-baseline/pull/25) ([arlimus](https://github.com/arlimus))
-- feature: add schroot to suid/sgid whitelist [\#24](https://github.com/dev-sec/linux-baseline/pull/24) ([arlimus](https://github.com/arlimus))
-- Update common [\#23](https://github.com/dev-sec/linux-baseline/pull/23) ([arlimus](https://github.com/arlimus))
-- updating common files [\#22](https://github.com/dev-sec/linux-baseline/pull/22) ([arlimus](https://github.com/arlimus))
-- changed GIS to DTAG SEC [\#21](https://github.com/dev-sec/linux-baseline/pull/21) ([atomic111](https://github.com/atomic111))
 - bugfix: lint error [\#20](https://github.com/dev-sec/linux-baseline/pull/20) ([chris-rock](https://github.com/chris-rock))
 
 ## [1.0.0](https://github.com/dev-sec/linux-baseline/tree/1.0.0) (2014-08-13)
+
+[Full Changelog](https://github.com/dev-sec/linux-baseline/compare/d39ff2f0ed650ff62f3eda29ba2adc9f36721d91...1.0.0)
+
 **Merged pull requests:**
 
 - Lockdown mode [\#19](https://github.com/dev-sec/linux-baseline/pull/19) ([arlimus](https://github.com/arlimus))
@@ -186,4 +316,4 @@
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

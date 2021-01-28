@@ -37,6 +37,8 @@ blacklist = attribute(
   description: 'blacklist of suid/sgid program on system'
 )
 
+cpuvulndir = '/sys/devices/system/cpu/vulnerabilities/'
+
 control 'os-01' do
   impact 1.0
   title 'Trusted hosts login'
@@ -99,10 +101,19 @@ control 'os-03' do
   end
 end
 
+control 'os-03b' do
+  impact 1.0
+  title 'Check passwords hashes in /etc/passwd'
+  desc 'Check periodically that /etc/passwd does not contain passwords'
+  describe passwd do
+    its('passwords') { should be_in ['x', '*'] }
+  end
+end
+
 control 'os-04' do
   impact 1.0
   title 'Dot in PATH variable'
-  desc 'Do not include the current working directory in PATH variable. This makes it easier for an attacker to gain extensive rigths by executing a Trojan program'
+  desc 'Do not include the current working directory in PATH variable. This makes it easier for an attacker to gain extensive rights by executing a Trojan program'
   describe os_env('PATH') do
     its('split') { should_not include('') }
     its('split') { should_not include('.') }
@@ -212,5 +223,27 @@ control 'os-11' do
     it { should be_directory }
     it { should be_owned_by 'root' }
     its(:group) { should match(/^root|syslog$/) }
+  end
+end
+
+control 'os-12' do
+  impact 1.0
+  title 'Detect vulnerabilities in the cpu-vulnerability-directory'
+  desc 'Check for known cpu vulnerabilities described here: https://www.kernel.org/doc/html/v5.6/admin-guide/hw-vuln/index.html'
+  only_if { !container_execution }
+
+  if file(cpuvulndir).exist?
+    describe file(cpuvulndir) do
+      it { should be_directory }
+    end
+
+    loaded_files = command('find ' + cpuvulndir + ' -type f -maxdepth 1').stdout.split(/\n/).map(&:strip).find_all { |vulnfiles| !vulnfiles.empty? }
+
+    loaded_files.each do |vulnfile|
+      describe file(vulnfile) do
+        its(:content) { should_not match 'vulnerable' }
+        its(:content) { should_not match 'Vulnerable' }
+      end
+    end
   end
 end
