@@ -17,8 +17,6 @@
 # author: Dominik Richter
 # author: Patrick Muench
 
-login_defs_umask = attribute('login_defs_umask', value: os.redhat? ? '077' : '027', description: 'Default umask to set in login.defs')
-
 login_defs_passmaxdays = attribute('login_defs_passmaxdays', value: '90', description: 'Default password maxdays to set in login.defs')
 login_defs_passmindays = attribute('login_defs_passmindays', value: '0', description: 'Default password mindays to set in login.defs')
 login_defs_passwarnage = attribute('login_defs_passwarnage', value: '7', description: 'Default password warnage (days) to set in login.defs')
@@ -124,7 +122,6 @@ control 'os-05' do
     it { should be_readable.by('other') }
   end
   describe login_defs do
-    its('UMASK') { should include(login_defs_umask) }
     its('PASS_MAX_DAYS') { should eq login_defs_passmaxdays }
     its('PASS_MIN_DAYS') { should eq login_defs_passmindays }
     its('PASS_WARN_AGE') { should eq login_defs_passwarnage }
