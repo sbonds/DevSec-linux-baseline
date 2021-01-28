@@ -208,14 +208,14 @@ end
 
 control 'sysctl-17' do
   impact 1.0
-  title 'Disable log martians'
+  title 'Do not disable log martians (common in Azure networks)'
   desc 'log_martians can cause a denial of service attack to the host'
   only_if { !container_execution }
   describe kernel_parameter('net.ipv4.conf.all.log_martians') do
-    its(:value) { should eq 1 }
+    its(:value) { should eq 0 }
   end
   describe kernel_parameter('net.ipv4.conf.default.log_martians') do
-    its(:value) { should eq 1 }
+    its(:value) { should eq 0 }
   end
 end
 
