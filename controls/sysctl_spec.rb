@@ -71,66 +71,6 @@ control 'sysctl-04' do
   end
 end
 
-control 'sysctl-05' do
-  impact 1.0
-  title 'ICMP ratelimit'
-  desc 'icmp_ratelimit defines how many packets that match the icmp_ratemask per second'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.icmp_ratelimit') do
-    its(:value) { should eq 100 }
-  end
-end
-
-control 'sysctl-06' do
-  impact 1.0
-  title 'ICMP ratemask'
-  desc 'Ratemask is a logical OR of all ICMP codes to rate limit'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.icmp_ratemask') do
-    its(:value) { should eq 88089 }
-  end
-end
-
-control 'sysctl-07' do
-  impact 1.0
-  title 'TCP timestamps'
-  desc "It is possible to estimate the current uptime of a Linux system. It's preferable to disable TCP timestamps on your systems."
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.tcp_timestamps') do
-    its(:value) { should eq 0 }
-  end
-end
-
-control 'sysctl-08' do
-  impact 1.0
-  title 'ARP ignore'
-  desc 'Reply only if the target IP address is local address configured on the incoming interface.'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.conf.all.arp_ignore') do
-    its(:value) { should eq 1 }
-  end
-end
-
-control 'sysctl-09' do
-  impact 1.0
-  title 'ARP announce'
-  desc 'Always use the best local address for this target. In this mode we ignore the source address in the IP packet and try to select local address that we prefer for talks with	the target host.'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.conf.all.arp_announce') do
-    its(:value) { should eq 2 }
-  end
-end
-
-control 'sysctl-10' do
-  impact 1.0
-  title 'TCP RFC1337 Protect Against TCP Time-Wait'
-  desc 'This enables a fix for time-wait assassination hazards in tcp, described in RFC 1337. If enabled, this causes the kernel to drop RST packets for sockets in the time-wait state.'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv4.tcp_rfc1337') do
-    its(:value) { should eq 1 }
-  end
-end
-
 control 'sysctl-11' do
   impact 1.0
   title 'Protection against SYN flood attacks'
