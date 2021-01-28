@@ -224,41 +224,8 @@ control 'sysctl-18' do
   title 'Disable IPv6 if it is not needed'
   desc 'Disable IPv6 if it is not needed'
   only_if { !container_execution }
-  describe kernel_parameter('net.ipv6.conf.all.disable_ipv6') do
-    its(:value) { should eq 1 }
-  end
-end
-
-control 'sysctl-19' do
-  impact 1.0
-  title 'IPv6 Forwarding'
-  desc "If you're not intending for your system to forward traffic between interfaces, or if you only have a single interface, the forwarding function must be disable."
-  only_if { sysctl_forwarding == false && !container_execution }
-  describe kernel_parameter('net.ipv6.conf.all.forwarding') do
-    its(:value) { should eq 0 }
-  end
-end
-
-control 'sysctl-20' do
-  impact 1.0
-  title 'Disable acceptance of all IPv6 redirected packets'
-  desc 'Disable acceptance of all redirected packets these prevents Man-in-the-Middle attacks.'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv6.conf.default.accept_redirects') do
-    its(:value) { should eq 0 }
-  end
-  describe kernel_parameter('net.ipv6.conf.all.accept_redirects') do
-    its(:value) { should eq 0 }
-  end
-end
-
-control 'sysctl-21' do
-  impact 1.0
-  title 'Disable acceptance of IPv6 router solicitations messages'
-  desc 'The router solicitations setting determines how many router solicitations are sent when bringing up the interface. If addresses are statically assigned, there is no need to send any solicitations.'
-  only_if { !container_execution }
-  describe kernel_parameter('net.ipv6.conf.default.router_solicitations') do
-    its(:value) { should eq 0 }
+  describe file('/proc/cmdline') do
+    its('content') { should match(/[ "]ipv6.disable=1[ "]?/) }
   end
 end
 
