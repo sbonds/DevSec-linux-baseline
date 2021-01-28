@@ -124,14 +124,10 @@ control 'os-05' do
     it { should be_readable.by('other') }
   end
   describe login_defs do
-    its('ENV_SUPATH') { should include('/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin') }
-    its('ENV_PATH') { should include('/usr/local/bin:/usr/bin:/bin') }
     its('UMASK') { should include(login_defs_umask) }
     its('PASS_MAX_DAYS') { should eq login_defs_passmaxdays }
     its('PASS_MIN_DAYS') { should eq login_defs_passmindays }
     its('PASS_WARN_AGE') { should eq login_defs_passwarnage }
-    its('LOGIN_RETRIES') { should eq '5' }
-    its('LOGIN_TIMEOUT') { should eq '60' }
     its('UID_MIN') { should eq '1000' }
     its('GID_MIN') { should eq '1000' }
   end
