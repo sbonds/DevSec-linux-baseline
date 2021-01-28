@@ -180,20 +180,13 @@ control 'os-10' do
   title 'CIS: Disable unused filesystems'
   desc '1.1.1 Ensure mounting of cramfs, freevxfs, jffs2, hfs, hfsplus, squashfs, udf, FAT'
   only_if { !container_execution }
-  efi_dir = inspec.file('/sys/firmware/efi')
   describe file('/etc/modprobe.d/CIS.conf') do
     its(:content) { should match 'install cramfs /bin/true' }
-    its(:content) { should match 'install freevxfs /bin/true' }
-    its(:content) { should match 'install jffs2 /bin/true' }
-    its(:content) { should match 'install hfs /bin/true' }
-    its(:content) { should match 'install hfsplus /bin/true' }
     its(:content) { should match 'install squashfs /bin/true' }
-    its(:content) { should match 'install udf /bin/true' }
-    # if efi is active, do not disable vfat. otherwise the system
-    # won't boot anymore
-    unless efi_dir.exist?
-      its(:content) { should match 'install vfat /bin/true' }
-    end
+    its(:content) { should match 'install dccp /bin/true' }
+    its(:content) { should match 'install sctp /bin/true' }
+    its(:content) { should match 'install rds /bin/true' }
+    its(:content) { should match 'install tipc /bin/true' }
   end
 end
 
