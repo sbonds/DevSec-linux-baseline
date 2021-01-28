@@ -1,10 +1,11 @@
+---
 name: linux-baseline
 title: DevSec Linux Security Baseline
-maintainer: Steve Bonds
-copyright: Steve Bonds
-copyright_email: sbonds@gmail.com
+maintainer: DevSec Hardening Framework Team
+copyright: DevSec Hardening Framework Team
+copyright_email: hello@dev-sec.io
 license: Apache-2.0
 summary: Test suite for best practice Linux OS hardening
-version: 2.3.0sbonds
+version: 2.6.2
 supports:
-  - os-family: linux
+    - os-family: linux
