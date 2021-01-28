@@ -152,9 +152,6 @@ control 'os-05b' do
   impact 1.0
   title 'Check login.defs - RedHat specific'
   desc 'Check owner and permissions for login.defs. Also check the configured PATH variable and umask in login.defs'
-  describe file('/etc/login.defs') do
-    it { should_not be_writable }
-  end
   describe login_defs do
     its('SYS_UID_MIN') { should eq '201' }
     its('SYS_UID_MAX') { should eq '999' }
@@ -162,16 +159,6 @@ control 'os-05b' do
     its('SYS_GID_MAX') { should eq '999' }
   end
   only_if { os.redhat? }
-end
-
-control 'os-06' do
-  impact 1.0
-  title 'Check for SUID/ SGID blacklist'
-  desc 'Find blacklisted SUID and SGID files to ensure that no rogue SUID and SGID files have been introduced into the system'
-
-  describe suid_check(blacklist) do
-    its('diff') { should be_empty }
-  end
 end
 
 control 'os-07' do
@@ -212,7 +199,7 @@ control 'os-10' do
   desc '1.1.1 Ensure mounting of cramfs, freevxfs, jffs2, hfs, hfsplus, squashfs, udf, FAT'
   only_if { !container_execution }
   efi_dir = inspec.file('/sys/firmware/efi')
-  describe file('/etc/modprobe.d/dev-sec.conf') do
+  describe file('/etc/modprobe.d/CIS.conf') do
     its(:content) { should match 'install cramfs /bin/true' }
     its(:content) { should match 'install freevxfs /bin/true' }
     its(:content) { should match 'install jffs2 /bin/true' }

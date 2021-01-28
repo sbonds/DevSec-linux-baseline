@@ -351,7 +351,7 @@ control 'sysctl-30' do
   desc "Kernel.sysreg is a 'magical' key combo you can hit which the kernel will respond to regardless of whatever else it is doing, unless it is completely locked up."
   only_if { !container_execution }
   describe kernel_parameter('kernel.sysrq') do
-    its(:value) { should eq 0 }
+    its(:value) { should eq 1 }
   end
 end
 
